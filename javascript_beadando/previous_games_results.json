@@ -1,0 +1,14 @@
+ [
+    {
+        "player1" : "Piroska",
+        "player2" : "Farkas",
+        "player1wins" : 3,
+        "player2wins" : 2
+    },
+    {
+        "player1" : "Kismalac1",
+        "player2" : "Kismalac2",
+        "player1wins" : 5,
+        "player2wins" : 10
+        }
+]

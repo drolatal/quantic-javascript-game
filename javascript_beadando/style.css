@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
+main{
+    width: 60%;
+    text-align: justify;
+    margin: 5% 20% 5% 20%;
+    text-align: center;
+    font-family: Russo One;
+}
+
+aside {
+    border: black solid 5px;
+    border-radius: 5px;
+    width: 15%;
+}
+
+h1{
+    text-align: center;
+    padding-bottom: 20px;
+}
+button{
+    margin-top: 10px;
+    height: 50px;
+    width: 300px;
+    font-family: Russo One;
+    font-size: large;
+    text-transform: uppercase;
+}
+
+button#start, button#save-and-quit{
+    margin-top: 5px;
+    height: 35px;
+    width: 210px;
+    font-family: Russo One;
+    font-size: large;
+}
+
+button#loadSelectedGame {
+    margin-top: 5px;
+    height: 55px;
+    width: 210px;
+    font-family: Russo One;
+    font-size: large;
+}
+
+button#save-and-quit{
+    position:absolute;
+    right:10px;
+    bottom:10px;
+}
+
+/*
+#div-single-player{display: none;}
+
+div#buttongroup{
+    display: none;
+}
+
+#gamerules,#game ,
+#gameinformations {
+    display:none;
+}
+*/
+.hiddendiv{
+    display:none;
+}
+
+
+div#gamerules p {
+    text-align: justify;
+}
+
+div#gameinformations input,
+div#gameinformations label,
+div#gameinformations select {
+    margin-top: 5px;
+    padding: 5px;
+}
+
+figure {
+    width:100%;
+}
+
+img {
+    width:80%;
+}
+
+#player1{position: absolute;left:0px;}
+#player2 {position: absolute;right:0px;}
+
+table {width: 100%;}
+
+td {
+    width: 170px;
+    height: 170px;
+    border-radius: 10px;;
+    background-color: lightsalmon;
+}
+
+tr:nth-of-type(1) > td:nth-of-type(1),
+tr:nth-of-type(1) > td:nth-of-type(2),
+tr:nth-of-type(2) > td:nth-of-type(1),
+tr:nth-of-type(2) > td:nth-of-type(2),
+tr:nth-of-type(3) > td:nth-of-type(3),
+tr:nth-of-type(3) > td:nth-of-type(4),
+tr:nth-of-type(4) > td:nth-of-type(3),
+tr:nth-of-type(4) > td:nth-of-type(4) {
+    background-color: lightblue;
+}
+
+td.freeplace {
+    border: gold 5px dashed;
+    border-radius: 10px;
+}
+
+td > img {
+    height:124px;
+    width:124px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+
+aside#player1 {
+    background-color: darkred;
+}
+
+aside#player2 {
+    background-color: green;
+}
+
+aside > figure {
+    width: 50%;
+}
+
+aside > img {
+    width: 50%;
+}
+
+img.selectedpiece {
+    border: gold 3px solid;
+    border-radius: 5px;
+}
+
+div#end-game-window {
+    position: fixed;
+    width: 33%;
+    height: 33%;
+    top: 33%;
+    left: 33%;
+    background-color: white;
+    z-index:2;
+    border: solid 3px gray;
+    border-radius: 10px;
+}

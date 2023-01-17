@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Quantic</title>
+</head>
+<body>
+    <main>
+        <h1>Quantic</h1>
+        <div id="buttongroup">
+            <button type="button" id="gamerule">Játékszabály</button>
+            <div id="gamerules" class="hiddendiv">
+                <p>A játék egy 4x4-es táblán játszódik, ami 4 egyenlő, 2x2-es részre van bontva. A játékhoz négy, egymástól könnyen megkülönböztethető, alakzatot használhatunk, jelen esetben négyzetet, kört, háromszöget és X-et. Mind a két játékosnak minden alakzatból 2-2 bábuja van, így összesen 8 alakzat található meg egy színből. A játék célja az, hogy elsőként helyezzék le a játékosok a negyedik, többitől különböző formát egy sorba, oszlopba, vagy négyzet alakú területre (színtől függetlenül). Ha egy cellára lehelyeztünk egy alakzatot, akkor annak sorába, oszlopába, vagy négyzet alakú területére nem tudja már egyik játékos sem még egyszer ugyanazt az alakzatot letenni.</p>
+                <figure>
+                    <img src="kepek/base.png" alt="Pálya és formák">
+                    <figcaption>Mivel a színek nem számítanak, nyerhetünk csupán úgy is, hogy mind a három másik alakzatot a másik játékos tette le, mi pedig a negyedik bábut helyeztük le.</figcaption>
+                </figure>
+                
+                <figure>
+                    <img src="kepek/win1.png" alt="Nyerés egyik lehetősége">
+                    <figcaption>Ebben a játékban a piros játékos helyezte le a piros kört a második sorban, így a jobb felső területre az utolsó hiányzó darab is felkerült, és megnyerte a játékot.</figcaption>
+                </figure>
+                <figure>
+                    <img src="kepek/win2.png" alt="Nyerés másik lehetősége">
+                    <figcaption>A piros játékos rakta le utoljára a piros kört az első sorban, így lehelyezve a hiányzó alakzatot abban a sorban, és megnyerte a játékot.</figcaption>
+                </figure>
+                <p><strong>Kiegészítés:</strong>A játék folyamán a háttér színe jelzi, hogy melyik játékos következik, illetve a soron következő játékos bábúinak a területe körül a szegély aranyszínűre vált. Amikor a játékos valamely bábúját a pályára szeretné helyezni, akkor a bábúra kell kattintania (ekkor egy arany szegéllyel kijelölődik a válaszott bábú), majd a táblának a játékos számára megfelelő, szabad mezőjére (szaggatott aranyszegéllyel ellátottak) kell kattintania. Abban az esetben, ha a játékos a úgy dönt másik bábút helyezne le és még nem helyezte le a jelenleg kiválasztottat, elég csak a másik bábúra kattintania. A játék végén egy kis ablakban felugrik a játék végeredménye, és gombra kattintva lehet visszatérni a főmenübe.</p>
+            </div>
+            <br><button type="button" id="begin-game">Játék indítása</button><br>
+            <div id="gameinformations" class="hiddendiv">
+
+                <label for="selectprevgame">Válaszd ki az előző játék eredményét: </label>
+                    <select name="selectprevgame" id="selectprevgame">
+                        <option value="-1">Új játékosok</option>
+                    </select><br>
+                    <button type="button" id="loadSelectedGame">Kiválasztott betöltése</button><br>
+                
+                    <label for="playeronename">1. játékos neve: </label>
+                    <input type="text" name="playeronename" id="playeronename" size="50" maxlength="50" value="1. játékos"><span id="player1-wins"></span><br>
+                <div id="div-single-player" class="hiddendiv"><input type="checkbox" name="single-player" id="isSingle">Egyjátékos mód<br></div>
+                <label for="playertwoname">2. játékos neve:</label>
+                    <input type="text" name="playertwoname" id="playertwoname" size="50" maxlength="50" value="2. játékos"><span id="player2-wins"></span><br>
+                <!--<div class="hiddendiv">--><label for="game">Válaszd ki a játékot!</label>
+                    <select name="selectgame" id="selectgame">
+                        <option value="new">Új játék</option>
+                    </select><br>
+                <!--</div>-->
+                <button type="button" id="start">Start</button>
+            </div>
+        </div>
+        <div id="game" class="hiddendiv">
+            <aside id="player1">
+                <h2 id="player1-name">1. Játékos</h2>
+            
+                <figure>
+                    <img src="kepek\formak\trian_red.png" alt="trian_red">
+                    <figcaption>2x</figcaption>
+                </figure>
+                <figure>
+                    <img src="kepek\formak\cross_red.png" alt="cross_red">
+                    <figcaption>2x</figcaption>
+                </figure>
+                <figure>
+                    <img src="kepek\formak\circl_red.png" alt="circl_red">
+                    <figcaption>2x</figcaption>
+                </figure>
+                <figure>
+                    <img src="kepek\formak\squar_red.png" alt="squar_red">
+                    <figcaption>2x</figcaption>
+                </figure>
+            
+            </aside>
+            <aside id="player2">
+                <h2 id="player2-name">2. Játékos</h2>
+                <figure>
+                    <img src="kepek\formak\trian_green.png" alt="trian_green">
+                    <figcaption>2x</figcaption>
+                </figure>
+                <figure>
+                    <img src="kepek\formak\cross_green.png" alt="cross_green">
+                    <figcaption>2x</figcaption>
+                </figure>
+                <figure>
+                    <img src="kepek\formak\circl_green.png" alt="circl_green">
+                    <figcaption>2x</figcaption>
+                </figure>
+                <figure>
+                    <img src="kepek\formak\squar_green.png" alt="squar_green">
+                    <figcaption>2x</figcaption>
+                </figure>
+            
+            </aside>
+            <table id="board">
+                <tr>
+                    <td><img src="kepek\formak\trian_red.png" alt=""></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <button type="button" id="save-and-quit">Mentés és kilépés</button>
+        </div>
+    </main>
+</body>
+ <script type="type/javascript" src="previous_games_results.json"></script>
+ <script src="jatek.js"></script>
+</html>
